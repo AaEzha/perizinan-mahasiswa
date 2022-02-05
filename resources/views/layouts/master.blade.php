@@ -257,7 +257,7 @@
                   <li><a class="nav-link" href="#">Top Navigation</a></li>
                 </ul>
               </li>
-              <li class="active"><a class="nav-link" href="#"><i class="far fa-square"></i> <span>Blank Page</span></a></li>
+              <li><a class="nav-link" href="#"><i class="far fa-square"></i> <span>Blank Page</span></a></li>
               <li><a class="nav-link" href="#"><i class="fas fa-pencil-ruler"></i> <span>Credits</span></a></li>
             </ul>
 
