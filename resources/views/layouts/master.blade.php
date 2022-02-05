@@ -14,6 +14,7 @@
   <!-- Template CSS -->
   <link rel="stylesheet" href="../assets/css/style.css">
   <link rel="stylesheet" href="../assets/css/components.css">
+  @stack('css')
 </head>
 
 <body>
@@ -240,14 +241,14 @@
       <div class="main-sidebar">
         <aside id="sidebar-wrapper">
           <div class="sidebar-brand">
-            <a href="/home">Stisla</a>
+            <a href="{{ route('dashboard') }}">Stisla</a>
           </div>
           <div class="sidebar-brand sidebar-brand-sm">
-            <a href="/home">St</a>
+            <a href="{{ route('dashboard') }}">St</a>
           </div>
           <ul class="sidebar-menu">
               <li class="menu-header">Dashboard</li>
-              <li class="active"><a class="nav-link" href="/home"><i class="fas fa-fire"></i> <span>Dashboard</span></a></li>
+              <li class="active"><a class="nav-link" href="{{ route('dashboard') }}"><i class="fas fa-fire"></i> <span>Dashboard</span></a></li>
               <li class="menu-header">Starter</li>
               <li class="nav-item dropdown">
                 <a href="#" class="nav-link has-dropdown" data-toggle="dropdown"><i class="fas fa-columns"></i> <span>Layout</span></a>
@@ -277,6 +278,7 @@
           </div>
 
           <div class="section-body">
+              @yield('content')
           </div>
         </section>
       </div>
@@ -328,5 +330,6 @@
   <script src="../assets/js/custom.js"></script>
 
   <!-- Page Specific JS File -->
+  @stack('js')
 </body>
 </html>
