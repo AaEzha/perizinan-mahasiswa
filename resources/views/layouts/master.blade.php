@@ -241,10 +241,10 @@
       <div class="main-sidebar">
         <aside id="sidebar-wrapper">
           <div class="sidebar-brand">
-            <a href="{{ route('dashboard') }}">Stisla</a>
+            <a href="{{ route('dashboard') }}">{{ config('app.name') }}</a>
           </div>
           <div class="sidebar-brand sidebar-brand-sm">
-            <a href="{{ route('dashboard') }}">St</a>
+            <a href="{{ route('dashboard') }}">NF</a>
           </div>
           <ul class="sidebar-menu">
               <li class="menu-header">Dashboard</li>
