@@ -220,7 +220,7 @@
             <img alt="image" src="../assets/img/avatar/avatar-1.png" class="rounded-circle mr-1">
             <div class="d-sm-none d-lg-inline-block">Hi, {{ auth()->user()->name }}</div></a>
             <div class="dropdown-menu dropdown-menu-right">
-              <div class="dropdown-title"><small>Logged in {{ auth()->user()->last_login_at->diffForHumans() }}</small></div>
+              <div class="dropdown-title"><small>Logged in {{ auth()->user()->last_login_at ? auth()->user()->last_login_at->diffForHumans() : now()->diffForHumans() }}</small></div>
               <a href="#" class="dropdown-item has-icon">
                 <i class="far fa-user"></i> Profile
               </a>
