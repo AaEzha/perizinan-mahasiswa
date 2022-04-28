@@ -29,8 +29,8 @@
                         class="col-12 col-sm-8 offset-sm-2 col-md-6 offset-md-3 col-lg-6 offset-lg-3 col-xl-4 offset-xl-4">
 
                         <div class="card card-primary">
-                            <div class="card-header">
-                                <h4>Login</h4>
+                            <div class="card-header d-flex flex-column justify-content-center">
+                                <img src="{{ asset('images/logo.png') }}" height="150px">
                             </div>
 
                             @if ($errors->any())
@@ -93,7 +93,7 @@
 
                             </div>
                         </div>
-                        <div class="mt-5 text-muted text-center">
+                        <div class="mt-3 text-muted text-center">
                             Don't have an account? <a href="/register">Create One</a>
                         </div>
                         <div class="simple-footer">

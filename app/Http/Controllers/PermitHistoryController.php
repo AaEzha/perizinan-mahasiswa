@@ -2,11 +2,11 @@
 
 namespace App\Http\Controllers;
 
-use App\Enum\Status;
 use App\Models\Permit;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
-class DashboardController extends Controller
+class PermitHistoryController extends Controller
 {
   /**
    * Handle the incoming request.
@@ -16,9 +16,9 @@ class DashboardController extends Controller
    */
   public function __invoke(Request $request)
   {
-    return view('dashboard.index', [
-      'title' => 'Dashboard',
-      'permits' => Permit::where('status', 'pending')->paginate(),
+    return view('user.permit-history', [
+      'title' => 'Permit History',
+      'permits' => Permit::where('user_id', Auth::id())->latest()->paginate(),
     ]);
   }
 }

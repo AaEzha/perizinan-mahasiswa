@@ -26,11 +26,11 @@
             <div class="container mt-5">
                 <div class="row">
                     <div
-                        class="col-12 col-sm-10 offset-sm-1 col-md-8 offset-md-2 col-lg-8 offset-lg-2 col-xl-8 offset-xl-2">
+                        class="col-12 col-sm-8 offset-sm-2 col-md-6 offset-md-3 col-lg-6 offset-lg-3 col-xl-4 offset-xl-4">
 
                         <div class="card card-primary">
-                            <div class="card-header">
-                                <h4>Register</h4>
+                            <div class="card-header d-flex flex-column justify-content-center">
+                                <img src="{{ asset('images/logo.png') }}" height="150px">
                             </div>
 
                             <div class="card-body">
@@ -51,21 +51,20 @@
                                         </div>
                                     </div>
 
-                                    <div class="row">
-                                        <div class="form-group col-6">
-                                            <label for="password" class="d-block">Password</label>
-                                            <input id="password" type="password" class="form-control pwstrength"
-                                                data-indicator="pwindicator" name="password">
-                                            <div id="pwindicator" class="pwindicator">
-                                                <div class="bar"></div>
-                                                <div class="label"></div>
-                                            </div>
+                                    <div class="form-group">
+                                        <label for="password" class="d-block">Password</label>
+                                        <input id="password" type="password" class="form-control pwstrength"
+                                            data-indicator="pwindicator" name="password">
+                                        <div id="pwindicator" class="pwindicator">
+                                            <div class="bar"></div>
+                                            <div class="label"></div>
                                         </div>
-                                        <div class="form-group col-6">
-                                            <label for="password_confirmation" class="d-block">Password Confirmation</label>
-                                            <input id="password_confirmation" type="password" class="form-control"
-                                                name="password_confirmation">
-                                        </div>
+                                    </div>
+
+                                    <div class="form-group">
+                                        <label for="password_confirmation" class="d-block">Password Confirmation</label>
+                                        <input id="password_confirmation" type="password" class="form-control"
+                                            name="password_confirmation">
                                     </div>
 
                                     <div class="form-group">
@@ -83,6 +82,9 @@
                                     </div>
                                 </form>
                             </div>
+                        </div>
+                        <div class="mt-3 text-muted text-center">
+                            Already have an account? <a href="/login">Log in</a>
                         </div>
                         <div class="simple-footer">
                             Copyright &copy; 2022 @if (date('Y') > 2022) - {{ date('Y') }} @endif <div class="bullet"></div> <a
