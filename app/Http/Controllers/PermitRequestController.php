@@ -28,7 +28,13 @@ class PermitRequestController extends Controller
       return redirect()->back()->with('error', 'Anda memiliki permintaan yang belum disetujui');
     }
 
-    Permit::create($request->all());
+    $permit = Permit::create($request->all());
+
+    $good = $permit->permit_good()->create($request->only('description', 'quantity', 'price'));
+
+    $good->update([
+      'image' => $request->file('image')->store('permit'),
+    ]);
 
     return redirect()->route('user.permit-history')->with('success', 'Permit request has been submitted.');
   }

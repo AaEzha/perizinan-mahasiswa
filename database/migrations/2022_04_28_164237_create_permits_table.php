@@ -20,6 +20,7 @@ return new class extends Migration
       $table->date('from_date');
       $table->date('to_date');
       $table->string('note')->nullable();
+      $table->string('address')->nullable();
       $table->string('status')->default('pending');
       $table->foreignId('admin_id')->nullable();
       $table->timestamp('responded_at')->nullable();

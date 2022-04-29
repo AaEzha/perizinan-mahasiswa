@@ -20,7 +20,7 @@
           @foreach ($users as $d)
           <tr>
             <td scope="row">{{ $loop->iteration }}</td>
-            <td>{{ $d->name }}</td>
+            <td>{{ $d->name }} @if($d->gender == "Male") [M] @else [F] @endif</td>
             <td>{{ $d->email }}</td>
             <td>{{ $d->role->value }}</td>
             <td>

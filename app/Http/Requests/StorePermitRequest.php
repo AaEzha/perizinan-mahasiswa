@@ -29,6 +29,12 @@ class StorePermitRequest extends FormRequest
       'from_date' => 'required|date',
       'to_date' => 'required|date|after:from_date',
       'status' => 'required|in:approved,rejected',
+      'address' => 'required',
+
+      'description' => 'required',
+      'quantity' => 'required|integer',
+      'price' => 'required|numeric',
+      'image' => 'required|image',
     ];
   }
 }

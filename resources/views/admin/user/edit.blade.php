@@ -48,6 +48,32 @@
         </div>
 
         <div class="row">
+          <div class="col-md-6">
+            <div class="form-group">
+              <label for="password_confirmation" class="d-block">Gender</label>
+              <div class="row">
+                <div class="col-md-6">
+                  <div class="form-check">
+                    <label class="form-check-label">
+                      <input type="radio" class="form-check-input" name="gender" id="gender" value="Male" @checked($user->gender == "Male")>
+                      Male
+                    </label>
+                  </div>
+                </div>
+                <div class="col-md-6">
+                  <div class="form-check">
+                    <label class="form-check-label">
+                      <input type="radio" class="form-check-input" name="gender" id="gender" value="Female" @checked($user->gender == "Female")>
+                      Female
+                    </label>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="row">
           <div class="col-md-12 d-flex justify-content-center mx-1">
             <button type="reset" class="btn btn-warning mx-1">Reset</button>
             <button type="submit" class="btn btn-success mx-1">Save</button>

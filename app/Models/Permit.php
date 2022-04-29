@@ -19,6 +19,7 @@ class Permit extends Model
     'status',
     'admin_id',
     'responded_at',
+    'address',
   ];
 
   protected $dates = [
@@ -45,5 +46,15 @@ class Permit extends Model
   public function admin()
   {
     return $this->belongsTo(User::class, 'admin_id');
+  }
+
+  /**
+   * Get the permit_good associated with the Permit
+   *
+   * @return \Illuminate\Database\Eloquent\Relations\HasOne
+   */
+  public function permit_good()
+  {
+      return $this->hasOne(PermitGood::class);
   }
 }

@@ -47,6 +47,7 @@ class UserController extends Controller
       'email' => $request->email,
       'password' => bcrypt($request->password),
       'role' => $request->role,
+      'gender' => $request->gender
     ]);
 
     return redirect()->route('admin.user.index')->with('success', 'User created successfully.');
@@ -90,6 +91,7 @@ class UserController extends Controller
       'name' => $request->name,
       'email' => $request->email,
       'role' => $request->role,
+      'gender' => $request->gender,
     ]);
 
     if ($request->filled('password')) {

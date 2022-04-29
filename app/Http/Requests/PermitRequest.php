@@ -27,6 +27,11 @@ class PermitRequest extends FormRequest
       'note' => 'required|string|max:255',
       'from_date' => 'required|date',
       'to_date' => 'required|date|after:from_date',
+
+      'description' => 'required',
+      'quantity' => 'required|integer',
+      'price' => 'required|numeric',
+      'image' => 'required|image',
     ];
   }
 }

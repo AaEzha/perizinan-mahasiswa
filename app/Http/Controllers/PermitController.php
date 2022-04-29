@@ -49,7 +49,13 @@ class PermitController extends Controller
       'responded_at' => now(),
     ]);
 
-    Permit::create($request->all());
+    $permit = Permit::create($request->except('description', 'quantity', 'price', 'image'));
+
+    $good = $permit->permit_good()->create($request->only('description', 'quantity', 'price'));
+
+    $good->update([
+      'image' => $request->file('image')->store('permit'),
+    ]);
 
     return redirect()->route('admin.permit.index')->with('success', 'Permit created successfully.');
   }
@@ -93,7 +99,13 @@ class PermitController extends Controller
       'responded_at' => now(),
     ]);
 
-    $permit->update($request->all());
+    $permit->update($request->except('description', 'quantity', 'price', 'image'));
+
+    $permit->permit_good()->update($request->only('description', 'quantity', 'price'));
+
+    $permit->permit_good()->update([
+      'image' => $request->file('image')->store('permit'),
+    ]);
 
     return redirect()->route('admin.permit.index')->with('success', 'Permit updated successfully.');
   }
