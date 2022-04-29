@@ -22,7 +22,7 @@
             <td scope="row">{{ $loop->iteration }}</td>
             <td>{{ $d->name }} @if($d->gender == "Male") [M] @else [F] @endif</td>
             <td>{{ $d->email }}</td>
-            <td>{{ $d->role->value }}</td>
+            <td>{{ $d->role }}</td>
             <td>
               <form action="{{ route('admin.user.destroy', $d->getKey()) }}" method="post">
                 @csrf

@@ -38,8 +38,8 @@
             <label for="role">Role</label>
             <select class="form-control @error("role") is-invalid @enderror" name="role" id="role">
               <option value="">Choose Role</option>
-              <option value="admin" @selected(old("role", $user->role->value) == "admin")>Admin</option>
-              <option value="user" @selected(old("role", $user->role->value) == "user")>User</option>
+              <option value="admin" @selected(old("role", $user->role) == "admin")>Admin</option>
+              <option value="user" @selected(old("role", $user->role) == "user")>User</option>
             </select>
             @error("role")
             <small id="role" class="form-text text-muted">{{ $message }}</small>
